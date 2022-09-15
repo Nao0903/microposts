@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @if (Auth::check()) //ユーザがログインしているかどうかを調べるための関数
+    @if (Auth::check()) {{--ユーザがログインしているかどうかを調べるための関数--}}
         {{ Auth::user()->name }}
     @else
         <div class="center jumbotron">
