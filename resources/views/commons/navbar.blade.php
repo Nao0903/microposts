@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="nav-bar">
             <ul class="navbar-nav mr-auto"></ul>
             <ul class="navbar-nav">
-                @if (Auth::check())//ユーザーがログインしているかどうか調べる関数
+                @if (Auth::check()) {{--ユーザーがログインしているかどうか調べる関数--}}
                     {{-- ユーザ一覧ページへのリンク --}}
                     <li class="nav-item">{!! link_to_route('users.index', 'Users', [], ['class' => 'nav-link']) !!}</li>
                     <li class="nav-item dropdown">
@@ -18,6 +18,7 @@
                         <ul class="dropdown-menu dropdown-menu-right">
                             {{-- ユーザ詳細ページへのリンク --}}
                             <li class="dropdown-item">{!! link_to_route('users.show', 'My profile', ['user' => Auth::id()]) !!}</li>
+                            {{--Auth::id() というクラスメソッドを使いましたが、これはログインユーザのIDを取得することができるメソッドで、Auth::user()->id--}}
                             <li class="dropdown-divider"></li>
                             {{-- ログアウトへのリンク --}}
                             <li class="dropdown-item">{!! link_to_route('logout.get', 'Logout') !!}</li>
