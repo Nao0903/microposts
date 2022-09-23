@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @if (Auth::check())
+    @if (Auth::check())　{{--認証済みなら投稿フォームを表示、未認証ならWELCOMEを表示--}}
         <div class="row">
             <aside class="col-sm-4">
                 <div class="card">
